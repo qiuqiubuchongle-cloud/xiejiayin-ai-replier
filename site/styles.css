@@ -456,10 +456,10 @@ code {
 
 @media (max-width: 900px) {
   .site-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px 20px;
+    align-items: center;
+    flex-direction: row;
+    min-height: 62px;
+    padding: 0 18px;
   }
 
   main {
@@ -468,6 +468,26 @@ code {
 
   .site-footer {
     width: min(100% - 24px, 680px);
+  }
+
+  .site-header nav {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .brand {
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  .brand-symbol {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .hero-section {
+    padding: 28px 0 26px;
   }
 
   .hero-layout,
@@ -485,16 +505,171 @@ code {
     flex-direction: column;
   }
 
+  .gallery-label {
+    gap: 8px;
+    padding-bottom: 14px;
+  }
+
+  .hero-layout {
+    gap: 24px;
+    padding-top: 24px;
+  }
+
+  .kicker {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
   h1 {
-    font-size: clamp(42px, 12vw, 64px);
+    margin-bottom: 16px;
+    font-size: clamp(40px, 11vw, 54px);
+    line-height: 1.08;
   }
 
   h1 span {
     white-space: normal;
   }
 
+  .hero-text {
+    font-size: 17px;
+    line-height: 1.72;
+  }
+
+  .hero-art {
+    padding: 10px;
+    box-shadow: 0 18px 42px rgba(57, 45, 28, 0.12);
+  }
+
+  .hero-art figcaption {
+    gap: 6px;
+    padding-top: 10px;
+    font-size: 13px;
+  }
+
+  .curator-note {
+    gap: 18px;
+    padding: 34px 0;
+  }
+
   .curator-note p,
   .sample-wall p {
+    font-size: 25px;
+    line-height: 1.42;
+  }
+
+  .exhibit-grid {
+    gap: 12px;
+    padding: 18px 0 42px;
+  }
+
+  .exhibit-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .exhibit-card h2 {
+    margin: 18px 0 8px;
     font-size: 28px;
+  }
+
+  .exhibit-card p {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .instrument-section {
+    padding: 44px 0;
+  }
+
+  .instrument-grid {
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .composer-panel,
+  .result-panel,
+  .sample-wall,
+  .install-section {
+    padding: 22px;
+  }
+
+  textarea {
+    min-height: 142px;
+    padding: 14px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  select {
+    min-height: 48px;
+  }
+
+  .switch-row {
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .primary-button {
+    min-height: 52px;
+  }
+
+  .result-heading {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .result-heading h2 {
+    font-size: 25px;
+  }
+
+  .result-card {
+    padding: 16px;
+  }
+
+  .result-card header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .result-card p {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .copy-button {
+    align-self: flex-end;
+  }
+
+  .sample-wall,
+  .install-section {
+    margin-bottom: 18px;
+  }
+
+  .install-section {
+    margin-bottom: 42px;
+  }
+
+  .install-section h2 {
+    font-size: 31px;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    padding: 14px;
+  }
+
+  code {
+    white-space: inherit;
+    word-break: inherit;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .site-footer {
+    margin-bottom: 28px;
+    padding-top: 18px;
+    font-size: 12px;
   }
 }
