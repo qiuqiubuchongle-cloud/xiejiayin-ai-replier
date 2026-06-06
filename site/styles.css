@@ -75,8 +75,9 @@ a {
   border-radius: 50%;
   color: var(--paper);
   background: var(--ink);
-  font-family: Arial, sans-serif;
-  font-size: 13px;
+  font-family: "Songti SC", "Noto Serif CJK SC", "PingFang SC", serif;
+  font-size: 15px;
+  font-weight: 900;
 }
 
 .site-header nav {
