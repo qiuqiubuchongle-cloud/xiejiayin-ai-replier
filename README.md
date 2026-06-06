@@ -232,7 +232,21 @@ The skill intentionally transforms real-person frustration into saint-mode stead
 | "不是我们的问题" | "这个我先帮你确认，相关团队我来同步。" |
 | "你自己看规则" | "我帮你捋一下，先别担心。" |
 
-## Installation
+## One-Click Install For gaent / Codex
+
+Run this command to install or update the skill directly from GitHub:
+
+```bash
+tmpdir="$(mktemp -d)" && git clone --depth 1 https://github.com/qiuqiubuchongle-cloud/xiejiayin-ai-replier.git "$tmpdir" && mkdir -p ~/.codex/skills && rm -rf ~/.codex/skills/xiejiayin-ai-replier && cp -R "$tmpdir/xiejiayin-ai-replier" ~/.codex/skills/ && rm -rf "$tmpdir"
+```
+
+After installation, invoke it in gaent / Codex with:
+
+```text
+Use $xiejiayin-ai-replier to reply to: "你们客服到底有没有人啊，等半天没人回。"
+```
+
+## Manual Installation
 
 Copy the skill folder into your Codex skills directory:
 
