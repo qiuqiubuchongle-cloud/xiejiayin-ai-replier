@@ -427,6 +427,33 @@ code {
   font-size: 14px;
 }
 
+.site-footer {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto 42px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.site-footer div {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.site-footer a {
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.site-footer p {
+  max-width: 720px;
+  margin-bottom: 0;
+}
+
 @media (max-width: 900px) {
   .site-header {
     align-items: flex-start;
@@ -436,6 +463,10 @@ code {
   }
 
   main {
+    width: min(100% - 24px, 680px);
+  }
+
+  .site-footer {
     width: min(100% - 24px, 680px);
   }
 
