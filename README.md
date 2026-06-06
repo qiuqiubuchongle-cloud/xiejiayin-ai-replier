@@ -234,13 +234,19 @@ The skill intentionally transforms real-person frustration into saint-mode stead
 
 ## One-Click Install For gaent / Codex
 
-Run this command to install or update the skill directly from GitHub:
+For Hermes / gaent, install the skill with one command:
 
 ```bash
-tmpdir="$(mktemp -d)" && git clone --depth 1 https://github.com/qiuqiubuchongle-cloud/xiejiayin-ai-replier.git "$tmpdir" && mkdir -p ~/.codex/skills && rm -rf ~/.codex/skills/xiejiayin-ai-replier && cp -R "$tmpdir/xiejiayin-ai-replier" ~/.codex/skills/ && rm -rf "$tmpdir"
+hermes skills install qiuqiubuchongle-cloud/xiejiayin-ai-replier/xiejiayin-ai-replier
 ```
 
-After installation, invoke it in gaent / Codex with:
+Or with the fully qualified skills.sh identifier:
+
+```bash
+hermes skills install skills-sh/qiuqiubuchongle-cloud/xiejiayin-ai-replier/xiejiayin-ai-replier
+```
+
+After installation, invoke it in Hermes / gaent / Codex with:
 
 ```text
 Use $xiejiayin-ai-replier to reply to: "你们客服到底有没有人啊，等半天没人回。"
@@ -252,6 +258,12 @@ Copy the skill folder into your Codex skills directory:
 
 ```bash
 cp -R xiejiayin-ai-replier ~/.codex/skills/
+```
+
+If your agent environment does not support `hermes skills install`, use this shell fallback:
+
+```bash
+tmpdir="$(mktemp -d)" && git clone --depth 1 https://github.com/qiuqiubuchongle-cloud/xiejiayin-ai-replier.git "$tmpdir" && mkdir -p ~/.codex/skills && rm -rf ~/.codex/skills/xiejiayin-ai-replier && cp -R "$tmpdir/xiejiayin-ai-replier" ~/.codex/skills/ && rm -rf "$tmpdir"
 ```
 
 Then invoke it by name in Codex:
