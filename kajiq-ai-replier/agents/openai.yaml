@@ -1,0 +1,4 @@
+interface:
+  display_name: "卡姐AI回复"
+  short_description: "闺蜜式回复 Bitget Wallet 社区问题"
+  default_prompt: "用 $kajiq-ai-replier 回复这句用户吐槽：Fiat24 开卡一直卡住，是不是又没戏了？"

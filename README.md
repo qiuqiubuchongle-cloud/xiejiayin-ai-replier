@@ -328,7 +328,9 @@ gm，alpha 收到🫡 我先帮你盯产品进展，DYOR，别上头🩵
 
 ## 一键安装
 
-所有支持 Agent Skills 的客户端，统一使用这一条命令：
+### 谢家印AI
+
+所有支持 Agent Skills 的客户端，统一使用这一条命令安装谢家印AI：
 
 ```bash
 npx skills add qiuqiubuchongle-cloud/xiejiayin-ai-replier/xiejiayin-ai-replier --yes --global
@@ -340,6 +342,31 @@ npx skills add qiuqiubuchongle-cloud/xiejiayin-ai-replier/xiejiayin-ai-replier -
 
 ```text
 用 $xiejiayin-ai-replier 回复这句用户吐槽：你们客服到底有没有人啊，等半天没人回。
+```
+
+### 卡姐AI / kajiQ
+
+如果你想使用 Bitget Wallet / PayFi / U卡 / 闺蜜客服风格，可以安装独立的卡姐AI：
+
+```bash
+npx skills add qiuqiubuchongle-cloud/xiejiayin-ai-replier/kajiq-ai-replier --yes --global
+```
+
+它适合：
+
+- Bitget Wallet、Fiat24、U卡、QR Pay、PayFi 相关回复。
+- 活动、空投、小惊喜、周边、社区互动。
+- 卡姐式“宝子 / 嘿嘿 / 心动行动 / 雨露均沾”短回复。
+- PayFi、U卡、钱包大众化、MEME、AI Agent 的中长文种草。
+
+示例：
+
+```text
+用 $kajiq-ai-replier 回复：Fiat24 开卡一直卡住，是不是又没戏了？
+```
+
+```text
+用 $kajiq-ai-replier 写一条长帖，解释为什么 PayFi 是让加密支付进入日常生活。
 ```
 
 ## 手动安装
