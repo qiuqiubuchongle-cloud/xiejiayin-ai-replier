@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>谢家印AI | 社区回复生成器</title>
+    <meta
+      name="description"
+      content="谢家印AI社区回复生成器，把用户吐槽转译成有温度、有推进感的中文回复。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="谢家印AI首页">
+        <span class="brand-symbol">X</span>
+        <span>谢家印AI</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#exhibition">能力</a>
+        <a href="#instrument">生成器</a>
+        <a href="#install">安装</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="gallery-label">
+          <span>REPLY SYSTEM</span>
+          <span>SKILL FOR AGENTS</span>
+        </div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="kicker">给社区运营的一键温柔回复工具</p>
+            <h1>
+              <span>来了就是VIP，</span>
+              <span>接住你的所有情绪</span>
+            </h1>
+            <p class="hero-text">
+              把谢家印的温暖、品牌公关的稳、客服的耐心，压进一个可安装的 Agent Skill。用户吐槽、催更、质疑、追问，都能生成短、暖、稳、有推进感的回复。
+            </p>
+          </div>
+          <figure class="hero-art">
+            <img src="./assets/xiejy-ai-infographic-horizontal.png" alt="谢家印AI信息图" />
+            <figcaption>
+              <span>INFOGRAPHIC</span>
+              <strong>从用户情绪到温和回复的完整流程</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="curator-note" id="exhibition">
+        <div class="section-index">为什么需要 / WHY IT EXISTS</div>
+        <p>
+          社区运营每天都在接情绪。真人会累，会急，会想解释；谢家印AI只做一件事：先接住用户，再给出推进动作，最后把对话留在一个更柔软的位置。
+        </p>
+      </section>
+
+      <section class="exhibit-grid" aria-label="技能亮点">
+        <article class="exhibit-card">
+          <span>01 / TEMPERATURE</span>
+          <h2>同一温度</h2>
+          <p>连续被骂也不反击，不甩锅，不阴阳怪气。用户越激动，回复越短、越稳、越柔。</p>
+        </article>
+        <article class="exhibit-card">
+          <span>02 / LANGUAGE</span>
+          <h2>语气不丢</h2>
+          <p>保留“来了就是VIP”“很快见惊喜”“操心的事我们来做”等记忆点。</p>
+        </article>
+        <article class="exhibit-card">
+          <span>03 / SERVICE</span>
+          <h2>先接情绪</h2>
+          <p>融入顶级客服、品牌公关、日本式服务、Web3 社交、小红书种草表达。</p>
+        </article>
+      </section>
+
+      <section class="instrument-section" id="instrument">
+        <div class="section-index">在线试用 / TRY IT</div>
+        <div class="instrument-grid">
+          <form class="composer-panel" id="replyForm">
+            <label for="userMessage">用户原话</label>
+            <textarea
+              id="userMessage"
+              rows="7"
+              placeholder="例如：为什么 Bitget 钱包这么难用？客服也没人回。"
+            ></textarea>
+
+            <div class="control-row">
+              <div>
+                <label for="sceneSelect">场景</label>
+                <select id="sceneSelect">
+                  <option value="complaint">用户吐槽</option>
+                  <option value="support">客服慢 / 服务失败</option>
+                  <option value="feature">功能催更</option>
+                  <option value="crisis">事故 / 赔偿 / 公关</option>
+                  <option value="promo">产品种草</option>
+                  <option value="tweet">写一条推文</option>
+                </select>
+              </div>
+              <div>
+                <label for="toneSelect">语气</label>
+                <select id="toneSelect">
+                  <option value="xie">谢家印原味</option>
+                  <option value="service">暖男客服</option>
+                  <option value="pr">品牌公关</option>
+                  <option value="web3">Web3 社交</option>
+                  <option value="redbook">小红书种草</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="switch-row">
+              <label>
+                <input id="emojiToggle" type="checkbox" checked />
+                <span>带 🩵 / 🫡</span>
+              </label>
+              <label>
+                <input id="shortToggle" type="checkbox" checked />
+                <span>短句优先</span>
+              </label>
+            </div>
+
+            <button class="primary-button" type="submit">生成回复</button>
+          </form>
+
+          <section class="result-panel" aria-live="polite">
+            <div class="result-heading">
+              <span>OUTPUT</span>
+              <h2>可直接复制的回复</h2>
+            </div>
+            <div class="result-list" id="resultList"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="sample-wall">
+        <div class="section-index">回复公式 / FORMULA</div>
+        <blockquote>
+          <p>“收到，先抱歉让你体验不好。我帮你记录推进一下，操心的事我们来做🩵”</p>
+          <cite>标准回复公式：收到 / 抱歉 → 记录推进 → 别担心 → 温暖收尾</cite>
+        </blockquote>
+      </section>
+
+      <section class="install-section" id="install">
+        <div class="section-index">安装 / INSTALL</div>
+        <h2>把这个 Skill 放进你的 Agent</h2>
+        <pre><code>npx skills add qiuqiubuchongle-cloud/xiejiayin-ai-replier/xiejiayin-ai-replier --yes --global</code></pre>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

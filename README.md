@@ -376,6 +376,52 @@ tmpdir="$(mktemp -d)" && git clone --depth 1 https://github.com/qiuqiubuchongle-
 用 $xiejiayin-ai-replier 写一条危机公关式回复，用户在问异常交易怎么赔。
 ```
 
+## 官网与在线生成器
+
+仓库里附带了一个官网和在线生成器：
+
+```text
+site/index.html
+```
+
+前端支持：
+
+- 输入用户原话。
+- 选择吐槽、客服慢、功能催更、危机公关、产品种草、推文等场景。
+- 选择谢家印原味、暖男客服、品牌公关、Web3 社交、小红书种草等语气增强层。
+- 生成 3 条回复。
+- 一键复制。
+- 使用 GSAP 做轻量动效。
+
+后端支持：
+
+- `GET /`：托管官网。
+- `POST /api/reply`：根据 Skill 规则生成 3 条回复。
+- `GET /healthz`：健康检查。
+- 如果配置了 `OPENAI_API_KEY`，后端会读取 `xiejiayin-ai-replier/SKILL.md` 和参考样本，让模型按 Skill 生成。
+- 如果没有配置 `OPENAI_API_KEY`，后端自动使用内置模板兜底，网站仍然可用。
+
+本地预览：
+
+```bash
+npm start
+```
+
+然后打开：
+
+```text
+http://localhost:8080
+```
+
+可选环境变量：
+
+```bash
+export OPENAI_API_KEY="你的 OpenAI API Key"
+export OPENAI_MODEL="gpt-4.1-mini"
+export PORT="8080"
+npm start
+```
+
 ## 校验结果
 
 技能已通过官方校验脚本：
