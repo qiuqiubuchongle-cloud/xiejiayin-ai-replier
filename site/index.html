@@ -8,8 +8,10 @@
 * { margin:0; padding:0; box-sizing:border-box }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
-  background: #0b0e14;
-  color: #d1d5db;
+  background:
+    radial-gradient(circle at 18% -8%, #fff7ed 0, transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+  color: #1d1d1f;
   line-height: 1.7;
   max-width: 1120px;
   margin: 0 auto;
@@ -17,59 +19,64 @@ body {
 }
 .badge {
   display: inline-block;
-  background: #1e2430;
-  color: #6b7280;
+  background: rgba(255,255,255,0.72);
+  color: #6e6e73;
   font-size: 0.7rem;
   padding: 3px 10px;
   border-radius: 12px;
   margin-bottom: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.04);
 }
-h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
-.update-time { font-size: 0.75rem; color: #4b5563; margin-bottom: 32px; }
+h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.02em; }
+.update-time { font-size: 0.75rem; color: #86868b; margin-bottom: 32px; }
 
 .section-header {
   font-size: 0.85rem;
   font-weight: 700;
-  color: #9ca3af;
+  color: #6e6e73;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 32px 0 12px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #1e2430;
+  border-bottom: 1px solid #e5e5ea;
 }
 
 .recommendation-card {
-  background: #111620;
-  border: 1px solid #1e2430;
-  border-radius: 14px;
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px;
   padding: 22px;
   min-width: 0;
-  transition: border-color 0.2s;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  backdrop-filter: blur(16px);
 }
-.recommendation-card.strong { border-color: #f59e0b33; background: linear-gradient(135deg, #111620 0%, #1a1610 100%); }
-.recommendation-card.moderate { border-color: #1e2430; }
-.recommendation-card.weak { opacity: 0.7; }
-.recommendation-card.closed { opacity: 0.4; }
+.recommendation-card:hover { transform: translateY(-1px); box-shadow: 0 24px 60px rgba(0,0,0,0.08); }
+.recommendation-card.strong { border-color: #f59e0b40; background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%); }
+.recommendation-card.moderate { border-color: rgba(0,0,0,0.06); }
+.recommendation-card.weak { opacity: 1; }
+.recommendation-card.closed { opacity: 0.72; }
 
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
-.match-title { font-size: 1.1rem; font-weight: 700; color: #f3f4f6; }
-.match-title a { color: #f3f4f6; text-decoration: none; }
+.match-title { font-size: 1.1rem; font-weight: 750; color: #1d1d1f; letter-spacing: -0.01em; }
+.match-title a { color: #1d1d1f; text-decoration: none; }
 .match-title a:hover { color: #f59e0b; }
-.match-date { font-size: 0.8rem; color: #4b5563; }
+.match-date { font-size: 0.8rem; color: #86868b; }
 
 .verdict {
   font-size: 0.95rem;
   margin: 10px 0 8px;
-  color: #e5e7eb;
+  color: #1d1d1f;
 }
 
 .reasons {
   font-size: 0.82rem;
-  color: #6b7280;
+  color: #6e6e73;
   line-height: 1.8;
 }
 .reasons li { margin-left: 16px; margin-bottom: 4px; }
-.reasons li::marker { color: #374151; }
+.reasons li::marker { color: #c7c7cc; }
 
 .confidence-tag {
   font-size: 0.7rem;
@@ -79,28 +86,32 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
 }
 .confidence-tag.high { background: #f59e0b20; color: #f59e0b; }
 .confidence-tag.medium { background: #3b82f620; color: #3b82f6; }
-.confidence-tag.low { background: #374151; color: #6b7280; }
+.confidence-tag.low { background: #f2f2f7; color: #6e6e73; }
 
-.footer { text-align: center; color: #374151; font-size: 0.7rem; margin-top: 48px; }
-.footer a { color: #4b5563; }
+.footer { text-align: center; color: #a1a1aa; font-size: 0.7rem; margin-top: 48px; }
+.footer a { color: #6e6e73; }
 
 .note {
-  background: #111620;
-  border: 1px solid #1e2430;
-  border-radius: 12px;
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px;
   padding: 18px;
   margin-top: 32px;
   font-size: 0.78rem;
-  color: #6b7280;
+  color: #6e6e73;
   line-height: 1.8;
+  box-shadow: 0 14px 42px rgba(0,0,0,0.05);
+  backdrop-filter: blur(16px);
 }
-.note strong { color: #9ca3af; }
+.note strong { color: #1d1d1f; }
 .review-summary {
-  background: #111620;
-  border: 1px solid #1e2430;
-  border-radius: 14px;
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 18px;
   padding: 18px;
   margin-bottom: 14px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.06);
+  backdrop-filter: blur(16px);
 }
 .review-top {
   display: flex;
@@ -110,12 +121,12 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   margin-bottom: 14px;
 }
 .review-title {
-  color: #f3f4f6;
+  color: #1d1d1f;
   font-size: 1rem;
   font-weight: 800;
 }
 .review-note {
-  color: #6b7280;
+  color: #6e6e73;
   font-size: 0.78rem;
   margin-top: 4px;
 }
@@ -126,10 +137,10 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   justify-content: flex-end;
 }
 .review-stat {
-  background: #0f131b;
-  border: 1px solid #1f2937;
+  background: #f5f5f7;
+  border: 1px solid #e5e5ea;
   border-radius: 999px;
-  color: #cbd5e1;
+  color: #3a3a3c;
   font-size: 0.74rem;
   padding: 5px 10px;
   white-space: nowrap;
@@ -145,20 +156,20 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   align-items: center;
   padding: 10px 12px;
   border-radius: 12px;
-  background: #0f131b;
-  border: 1px solid #1f2937;
+  background: #f8f8fa;
+  border: 1px solid #e5e5ea;
   font-size: 0.78rem;
 }
 .review-row.header {
   background: transparent;
   border: 0;
-  color: #64748b;
+  color: #86868b;
   padding-top: 0;
   padding-bottom: 0;
 }
-.review-match { color: #f3f4f6; font-weight: 700; }
+.review-match { color: #1d1d1f; font-weight: 700; }
 .review-direction,
-.review-result { color: #94a3b8; }
+.review-result { color: #6e6e73; }
 .review-badge {
   border-radius: 999px;
   font-size: 0.72rem;
@@ -167,7 +178,7 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   white-space: nowrap;
 }
 .review-badge.hit { background: #16a34a20; color: #22c55e; border: 1px solid #16a34a33; }
-.review-badge.skip { background: #374151; color: #9ca3af; border: 1px solid #4b5563; }
+.review-badge.skip { background: #f2f2f7; color: #6e6e73; border: 1px solid #e5e5ea; }
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -211,15 +222,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">等盘口，不买</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：已有聪明钱痕迹，但没有可验证价格；必须等胜平负/让球/大小球盘口出现</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">等盘口，不买</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：已有聪明钱痕迹，但没有可验证价格；必须等胜平负/让球/大小球盘口出现</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>链上 11 个高胜率地址已进场</li><li>这些地址在此比赛上已实现 $3,732,834 盈利</li><li>比赛临近（2026-06-17），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -232,17 +243,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">西班牙</span> <span style="color:#f59e0b">92%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#f3f4f6;font-weight:600">维德角</span> <span style="color:#f59e0b">2%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：西班牙 -2.5  |  大小球：大于 3.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">西班牙</span> <span style="color:#f59e0b">92%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#1d1d1f;font-weight:600">维德角</span> <span style="color:#f59e0b">2%</span></div><div style="font-size:0.75rem;color:#86868b">让球：西班牙 -2.5  |  大小球：大于 3.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">让球盘：买 西班牙 -2.5</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：让球盘（Polymarket 里选 Spreads）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：西班牙 -2.5</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是 西班牙 必须赢 3 球或以上才算赢；只赢 2 球或更少就输。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 58% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：如果这个选项价格涨到 60% 以上，或聪明钱没有继续流入，放弃</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">让球盘：买 西班牙 -2.5</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：让球盘（Polymarket 里选 Spreads）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：西班牙 -2.5</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是 西班牙 必须赢 3 球或以上才算赢；只赢 2 球或更少就输。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 58% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：如果这个选项价格涨到 60% 以上，或聪明钱没有继续流入，放弃</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   
@@ -255,17 +266,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">比利时</span> <span style="color:#f59e0b">62%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">24%</span>  ·  <span style="color:#f3f4f6;font-weight:600">埃及</span> <span style="color:#f59e0b">16%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：比利时 -1.5  |  大小球：大于 2.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">比利时</span> <span style="color:#f59e0b">62%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">24%</span>  ·  <span style="color:#1d1d1f;font-weight:600">埃及</span> <span style="color:#f59e0b">16%</span></div><div style="font-size:0.75rem;color:#86868b">让球：比利时 -1.5  |  大小球：大于 2.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">胜平负：买 比利时 胜</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：比利时 胜</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是只买 比利时 常规比赛胜出，不是让球盘。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 67% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">胜平负：买 比利时 胜</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：比利时 胜</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是只买 比利时 常规比赛胜出，不是让球盘。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 67% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   
@@ -278,17 +289,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">沙特阿拉伯</span> <span style="color:#f59e0b">12%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">23%</span>  ·  <span style="color:#f3f4f6;font-weight:600">乌拉圭</span> <span style="color:#f59e0b">67%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：乌拉圭 -1.5  |  大小球：大于 2.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">沙特阿拉伯</span> <span style="color:#f59e0b">12%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">23%</span>  ·  <span style="color:#1d1d1f;font-weight:600">乌拉圭</span> <span style="color:#f59e0b">67%</span></div><div style="font-size:0.75rem;color:#86868b">让球：乌拉圭 -1.5  |  大小球：大于 2.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">胜平负：买 乌拉圭 胜</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：乌拉圭 胜</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是只买 乌拉圭 常规比赛胜出，不是让球盘。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 72% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">胜平负：买 乌拉圭 胜</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：乌拉圭 胜</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是只买 乌拉圭 常规比赛胜出，不是让球盘。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 72% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   
@@ -301,17 +312,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">伊朗</span> <span style="color:#f59e0b">51%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">28%</span>  ·  <span style="color:#f3f4f6;font-weight:600">新西兰</span> <span style="color:#f59e0b">22%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：伊朗 -1.5  |  大小球：大于 2.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">伊朗</span> <span style="color:#f59e0b">51%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">28%</span>  ·  <span style="color:#1d1d1f;font-weight:600">新西兰</span> <span style="color:#f59e0b">22%</span></div><div style="font-size:0.75rem;color:#86868b">让球：伊朗 -1.5  |  大小球：大于 2.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">大小球：买 大于 2.5</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：大小球（Polymarket 里选 Totals）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：大于 2.5</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是买两队最终总进球数相对盘口线的大/小。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 58% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：没有明确同向资金时不碰大小球</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">大小球：买 大于 2.5</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：大小球（Polymarket 里选 Totals）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：大于 2.5</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是买两队最终总进球数相对盘口线的大/小。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 58% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：没有明确同向资金时不碰大小球</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   
@@ -324,17 +335,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">法国</span> <span style="color:#f59e0b">67%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">22%</span>  ·  <span style="color:#f3f4f6;font-weight:600">塞内加尔</span> <span style="color:#f59e0b">13%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：法国 -1.5  |  大小球：大于 2.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">法国</span> <span style="color:#f59e0b">67%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">22%</span>  ·  <span style="color:#1d1d1f;font-weight:600">塞内加尔</span> <span style="color:#f59e0b">13%</span></div><div style="font-size:0.75rem;color:#86868b">让球：法国 -1.5  |  大小球：大于 2.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">胜平负：买 法国 胜</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：法国 胜</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是只买 法国 常规比赛胜出，不是让球盘。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 72% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">胜平负：买 法国 胜</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：法国 胜</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是只买 法国 常规比赛胜出，不是让球盘。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 72% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-16），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -347,17 +358,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">伊拉克</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">13%</span>  ·  <span style="color:#f3f4f6;font-weight:600">挪威</span> <span style="color:#f59e0b">83%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：挪威 -1.5  |  大小球：大于 2.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">伊拉克</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">13%</span>  ·  <span style="color:#1d1d1f;font-weight:600">挪威</span> <span style="color:#f59e0b">83%</span></div><div style="font-size:0.75rem;color:#86868b">让球：挪威 -1.5  |  大小球：大于 2.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">大小球：买 大于 2.5</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：大小球（Polymarket 里选 Totals）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：大于 2.5</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是买两队最终总进球数相对盘口线的大/小。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 58% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：没有明确同向资金时不碰大小球</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">大小球：买 大于 2.5</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：大小球（Polymarket 里选 Totals）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：大于 2.5</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是买两队最终总进球数相对盘口线的大/小。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 58% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：没有明确同向资金时不碰大小球</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-16），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -370,17 +381,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">阿根廷</span> <span style="color:#f59e0b">71%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">21%</span>  ·  <span style="color:#f3f4f6;font-weight:600">阿尔及利亚</span> <span style="color:#f59e0b">10%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：阿根廷 -1.5  |  大小球：大于 2.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">阿根廷</span> <span style="color:#f59e0b">71%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">21%</span>  ·  <span style="color:#1d1d1f;font-weight:600">阿尔及利亚</span> <span style="color:#f59e0b">10%</span></div><div style="font-size:0.75rem;color:#86868b">让球：阿根廷 -1.5  |  大小球：大于 2.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">胜平负：买 阿根廷 胜</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：阿根廷 胜</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是只买 阿根廷 常规比赛胜出，不是让球盘。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 75% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">胜平负：买 阿根廷 胜</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：阿根廷 胜</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是只买 阿根廷 常规比赛胜出，不是让球盘。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 75% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-16），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -393,17 +404,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">低确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">奥地利</span> <span style="color:#f59e0b">73%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">18%</span>  ·  <span style="color:#f3f4f6;font-weight:600">约旦</span> <span style="color:#f59e0b">11%</span></div><div style="font-size:0.75rem;color:#4b5563">让球：奥地利 -1.5  |  大小球：大于 2.5</div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">奥地利</span> <span style="color:#f59e0b">73%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">18%</span>  ·  <span style="color:#1d1d1f;font-weight:600">约旦</span> <span style="color:#f59e0b">11%</span></div><div style="font-size:0.75rem;color:#86868b">让球：奥地利 -1.5  |  大小球：大于 2.5</div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">胜平负：买 奥地利 胜</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：奥地利 胜</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">意思是只买 奥地利 常规比赛胜出，不是让球盘。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 75% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">胜平负：买 奥地利 胜</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：奥地利 胜</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">意思是只买 奥地利 常规比赛胜出，不是让球盘。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 75% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：如果价格高于上限，或临场出现反向聪明钱，放弃</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-17），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -418,15 +429,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">暂无明确盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">暂无明确盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>比赛临近（2026-06-17），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -441,15 +452,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">暂无明确盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">暂无明确盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>比赛临近（2026-06-18），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -464,15 +475,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">暂无明确盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">暂无明确盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>比赛临近（2026-06-18），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -487,15 +498,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">暂无明确盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">暂无明确盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
 </div>
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>比赛临近（2026-06-17），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
@@ -560,17 +571,17 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
     </div>
     <span class="confidence-tag low">—确定性</span>
   </div>
-  <div style="font-size:0.85rem;margin:8px 0;color:#6b7280">胜平负：<span style="color:#f3f4f6;font-weight:600">瑞典</span> <span style="color:#f59e0b">94%</span>  ·  <span style="color:#f3f4f6;font-weight:600">平局</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#f3f4f6;font-weight:600">突尼斯</span> <span style="color:#f59e0b">2%</span></div>
+  <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">瑞典</span> <span style="color:#f59e0b">94%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#1d1d1f;font-weight:600">突尼斯</span> <span style="color:#f59e0b">2%</span></div>
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">胜平负：买 瑞典 胜</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：瑞典 胜</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">缺少让球/大小球价格，只能按胜平负观察。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：≤ 60% · 建议仓位：观察</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：等待确认</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少让球/大小球数据，先观望</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">胜平负：买 瑞典 胜</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：胜平负（Polymarket 里选 Moneyline）</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：瑞典 胜</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">缺少让球/大小球价格，只能按胜平负观察。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：≤ 60% · 建议仓位：观察</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：等待确认</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少让球/大小球数据，先观望</div>
 </div>
   <div class="verdict">已结束</div>
   <ul class='reasons'><li>赛果：瑞典 3-0</li><li>链上 7 个高胜率地址已进场</li><li>这些地址在此比赛上已实现 $3,866,160 盈利</li></ul>
@@ -585,15 +596,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">等盘口，不买</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：已有聪明钱痕迹，但没有可验证价格；必须等胜平负/让球/大小球盘口出现</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">等盘口，不买</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：已有聪明钱痕迹，但没有可验证价格；必须等胜平负/让球/大小球盘口出现</div>
 </div>
   <div class="verdict">已结束</div>
   <ul class='reasons'><li>赛果：科特迪瓦 4-2</li><li>链上 4 个高胜率地址已进场</li><li>这些地址在此比赛上已实现 $1,919,671 盈利</li></ul>
@@ -608,15 +619,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">暂无明确盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">暂无明确盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
 </div>
   <div class="verdict">已结束</div>
   <ul class='reasons'><li>赛果：美国 2-0</li></ul>
@@ -631,15 +642,15 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">暂无明确盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">暂无明确盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
 </div>
   <div class="verdict">已结束</div>
   <ul class='reasons'><li>赛果：韩国 2-1</li></ul>
@@ -654,20 +665,20 @@ h1 { font-size: 1.5rem; color: #fff; margin-bottom: 4px; }
   </div>
   
   
-<div style="margin-top:10px;padding:12px;border-radius:12px;background:#0f131b;border:1px solid #1f2937">
-  <div style="font-size:0.78rem;color:#9ca3af;margin-bottom:6px">推荐盘口</div>
-  <div style="font-size:1rem;color:#f3f4f6;font-weight:700">暂无明确盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
-  <div style="font-size:0.78rem;color:#94a3b8;margin-top:4px">买入选项：不买</div>
-  <div style="font-size:0.76rem;color:#64748b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
-  <div style="font-size:0.8rem;color:#cbd5e1;margin-top:8px">价格上限：— · 建议仓位：观望</div>
-  <div style="font-size:0.8rem;color:#94a3b8;margin-top:4px">执行判断：观望</div>
-  <div style="font-size:0.74rem;color:#64748b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
+<div style="margin-top:10px;padding:12px;border-radius:12px;background:#f8f8fa;border:1px solid #e5e5ea">
+  <div style="font-size:0.78rem;color:#6e6e73;margin-bottom:6px">推荐盘口</div>
+  <div style="font-size:1rem;color:#1d1d1f;font-weight:700">暂无明确盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:6px">盘口分组：等待 Polymarket 盘口</div>
+  <div style="font-size:0.78rem;color:#6e6e73;margin-top:4px">买入选项：不买</div>
+  <div style="font-size:0.76rem;color:#86868b;margin-top:4px">没有可验证价格时，不把聪明钱痕迹直接当成买点。</div>
+  <div style="font-size:0.8rem;color:#3a3a3c;margin-top:8px">价格上限：— · 建议仓位：观望</div>
+  <div style="font-size:0.8rem;color:#6e6e73;margin-top:4px">执行判断：观望</div>
+  <div style="font-size:0.74rem;color:#86868b;margin-top:6px">放弃条件：缺少赔率数据，等待临场盘口更新</div>
 </div>
   <div class="verdict">已结束</div>
   <ul class='reasons'><li>赛果：加拿大 2-1</li></ul>
 </div></div>
-<div style="text-align:center;padding:40px 0;color:#4b5563">
+<div style="text-align:center;padding:40px 0;color:#86868b">
   <div style="font-size:2rem;margin-bottom:12px">🏟️</div>
   <p>当前暂无明确信号的比赛</p>
   <p style="font-size:0.8rem;margin-top:4px">聪明钱通常在赛前 2-4 小时集中进场，晚些时候再来看</p>
