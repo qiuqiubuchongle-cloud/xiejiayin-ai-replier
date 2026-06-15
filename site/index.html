@@ -109,6 +109,21 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
 .confidence-tag.medium { background: #3b82f620; color: #3b82f6; }
 .confidence-tag.low { background: #f2f2f7; color: #6e6e73; }
 .signal-card .confidence-tag.low { background: #fff3d6; color: #b45309; }
+.signal-card div[style*="font-size:1rem"][style*="font-weight:700"] {
+  font-size: 1.22rem !important;
+  line-height: 1.35 !important;
+  font-weight: 850 !important;
+  color: #111827 !important;
+  letter-spacing: -0.01em;
+}
+.signal-card div[style*="font-size:1rem"][style*="font-weight:700"]::before {
+  content: "值得盯 ";
+  color: #f59e0b;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-right: 4px;
+  vertical-align: 1px;
+}
 
 .footer { text-align: center; color: #a1a1aa; font-size: 0.7rem; margin-top: 48px; }
 .footer a { color: #6e6e73; }
