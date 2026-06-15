@@ -48,6 +48,7 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   border-radius: 18px;
   padding: 22px;
   min-width: 0;
+  position: relative;
   box-shadow: 0 18px 50px rgba(0,0,0,0.06);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   backdrop-filter: blur(16px);
@@ -57,6 +58,26 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
 .recommendation-card.moderate { border-color: rgba(0,0,0,0.06); }
 .recommendation-card.weak { opacity: 1; }
 .recommendation-card.closed { opacity: 0.72; }
+.recommendation-card.signal-card {
+  order: 1;
+  border-color: #f59e0b55;
+  box-shadow: 0 22px 62px rgba(245,158,11,0.12), 0 12px 34px rgba(0,0,0,0.05);
+}
+.recommendation-card.signal-card::before {
+  content: "重点盯盘";
+  position: absolute;
+  top: -10px;
+  right: 18px;
+  background: #1d1d1f;
+  color: #fff;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.68rem;
+  font-weight: 750;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+}
+.recommendation-card.watch-card { order: 2; }
+.recommendation-card.no-market-card { order: 3; opacity: 0.86; }
 
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
 .match-title { font-size: 1.1rem; font-weight: 750; color: #1d1d1f; letter-spacing: -0.01em; }
@@ -87,6 +108,7 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
 .confidence-tag.high { background: #f59e0b20; color: #f59e0b; }
 .confidence-tag.medium { background: #3b82f620; color: #3b82f6; }
 .confidence-tag.low { background: #f2f2f7; color: #6e6e73; }
+.signal-card .confidence-tag.low { background: #fff3d6; color: #b45309; }
 
 .footer { text-align: center; color: #a1a1aa; font-size: 0.7rem; margin-top: 48px; }
 .footer a { color: #6e6e73; }
@@ -212,7 +234,7 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
 <div class="note" style="margin-top:0;margin-bottom:20px">
   当前没有达到买入阈值的世界杯盘口。可以看下面的候选比赛，但必须等聪明钱出现同向流入后再动。
 </div><div class="section-header">📋 等待信号 / 其他比赛</div><div class="card-grid">
-<div class="recommendation-card weak">
+<div class="recommendation-card no-market-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/search?query=Netherlands+Japan+World+Cup" target="_blank">荷兰 vs 日本</a></div>
@@ -235,13 +257,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>链上 11 个高胜率地址已进场</li><li>这些地址在此比赛上已实现 $3,732,834 盈利</li><li>比赛临近（2026-06-17），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card signal-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-esp-cvi-2026-06-15" target="_blank">西班牙 vs 维德角</a></div>
       <div class="match-date">06/15 周一</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">有方向</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">西班牙</span> <span style="color:#f59e0b">92%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#1d1d1f;font-weight:600">维德角</span> <span style="color:#f59e0b">2%</span></div><div style="font-size:0.75rem;color:#86868b">让球：西班牙 -2.5  |  大小球：大于 3.5</div>
   
@@ -258,13 +280,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card signal-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-bel-egy-2026-06-15" target="_blank">比利时 vs 埃及</a></div>
       <div class="match-date">06/15 周一</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">有方向</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">比利时</span> <span style="color:#f59e0b">62%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">24%</span>  ·  <span style="color:#1d1d1f;font-weight:600">埃及</span> <span style="color:#f59e0b">16%</span></div><div style="font-size:0.75rem;color:#86868b">让球：比利时 -1.5  |  大小球：大于 2.5</div>
   
@@ -281,13 +303,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card signal-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-ksa-ury-2026-06-15" target="_blank">沙特阿拉伯 vs 乌拉圭</a></div>
       <div class="match-date">06/15 周一</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">有方向</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">沙特阿拉伯</span> <span style="color:#f59e0b">12%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">23%</span>  ·  <span style="color:#1d1d1f;font-weight:600">乌拉圭</span> <span style="color:#f59e0b">67%</span></div><div style="font-size:0.75rem;color:#86868b">让球：乌拉圭 -1.5  |  大小球：大于 2.5</div>
   
@@ -304,13 +326,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card watch-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-irn-nzl-2026-06-15" target="_blank">伊朗 vs 新西兰</a></div>
       <div class="match-date">06/15 周一</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">关注</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">伊朗</span> <span style="color:#f59e0b">51%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">28%</span>  ·  <span style="color:#1d1d1f;font-weight:600">新西兰</span> <span style="color:#f59e0b">22%</span></div><div style="font-size:0.75rem;color:#86868b">让球：伊朗 -1.5  |  大小球：大于 2.5</div>
   
@@ -327,13 +349,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card signal-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-fra-sen-2026-06-16" target="_blank">法国 vs 塞内加尔</a></div>
       <div class="match-date">06/16 周二</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">有方向</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">法国</span> <span style="color:#f59e0b">67%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">22%</span>  ·  <span style="color:#1d1d1f;font-weight:600">塞内加尔</span> <span style="color:#f59e0b">13%</span></div><div style="font-size:0.75rem;color:#86868b">让球：法国 -1.5  |  大小球：大于 2.5</div>
   
@@ -350,13 +372,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-16），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card watch-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-irq-nor-2026-06-16" target="_blank">伊拉克 vs 挪威</a></div>
       <div class="match-date">06/16 周二</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">关注</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">伊拉克</span> <span style="color:#f59e0b">6%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">13%</span>  ·  <span style="color:#1d1d1f;font-weight:600">挪威</span> <span style="color:#f59e0b">83%</span></div><div style="font-size:0.75rem;color:#86868b">让球：挪威 -1.5  |  大小球：大于 2.5</div>
   
@@ -373,13 +395,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-16），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card signal-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-arg-alg-2026-06-16" target="_blank">阿根廷 vs 阿尔及利亚</a></div>
       <div class="match-date">06/16 周二</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">有方向</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">阿根廷</span> <span style="color:#f59e0b">71%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">21%</span>  ·  <span style="color:#1d1d1f;font-weight:600">阿尔及利亚</span> <span style="color:#f59e0b">10%</span></div><div style="font-size:0.75rem;color:#86868b">让球：阿根廷 -1.5  |  大小球：大于 2.5</div>
   
@@ -396,13 +418,13 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-16），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card signal-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/sports/world-cup/games/week/1/fifwc-aut-jor-2026-06-17" target="_blank">奥地利 vs 约旦</a></div>
       <div class="match-date">06/17 周三</div>
     </div>
-    <span class="confidence-tag low">低确定性</span>
+    <span class="confidence-tag low">有方向</span>
   </div>
   <div style="font-size:0.85rem;margin:8px 0;color:#6e6e73">胜平负：<span style="color:#1d1d1f;font-weight:600">奥地利</span> <span style="color:#f59e0b">73%</span>  ·  <span style="color:#1d1d1f;font-weight:600">平局</span> <span style="color:#f59e0b">18%</span>  ·  <span style="color:#1d1d1f;font-weight:600">约旦</span> <span style="color:#f59e0b">11%</span></div><div style="font-size:0.75rem;color:#86868b">让球：奥地利 -1.5  |  大小球：大于 2.5</div>
   
@@ -419,7 +441,7 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>比赛临近（2026-06-17），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card no-market-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/search?query=Brazil+Morocco+World+Cup" target="_blank">巴西 vs 摩洛哥</a></div>
@@ -442,7 +464,7 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>比赛临近（2026-06-17），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card no-market-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/search?query=Australia+Turkiye+World+Cup" target="_blank">澳大利亚 vs 土耳其</a></div>
@@ -465,7 +487,7 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>比赛临近（2026-06-18），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card no-market-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/search?query=Haiti+Scotland+World+Cup" target="_blank">海地 vs 苏格兰</a></div>
@@ -488,7 +510,7 @@ h1 { font-size: 1.75rem; color: #111827; margin-bottom: 4px; letter-spacing: -0.
   <div class="verdict">📌 暂无明确信号</div>
   <ul class='reasons'><li>缺少胜平负/让球/大小球赔率，只能观察，不能给买入建议</li><li>比赛临近（2026-06-18），聪明钱通常在赛前 2-4 小时集中进场，建议盯盘</li></ul>
 </div>
-<div class="recommendation-card weak">
+<div class="recommendation-card no-market-card weak">
   <div class="card-top">
     <div>
       <div class="match-title"><a href="https://polymarket.com/search?query=Germany+Curacao+World+Cup" target="_blank">德国 vs 库拉索</a></div>
